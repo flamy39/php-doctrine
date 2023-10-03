@@ -12,17 +12,23 @@ $config = ORMSetup::createAttributeMetadataConfiguration(
     paths: array(__DIR__."/src"),
     isDevMode: true,
 );
+
+// Récupération des variables d'environnement
+$dotenv = Dotenv\Dotenv::createImmutable(__DIR__);
+$dotenv->load();
+
+
 // Configuration de la connexion à la base de données
 $connection = DriverManager::getConnection([
     'driver' => 'pdo_mysql',
-    'host' => 'localhost',
-    'dbname' => 'test',
-    'user' => 'root',
-    'password' => ''
+    'host' => $_ENV['BD_HOST'],
+    'dbname' => $_ENV['BD_NAME'],
+    'user' => $_ENV['BD_USER'],
+    'password' => $_ENV['BD_PASSWORD']
 ], $config);
 
 // Création de l'entity manager
-$entityManager = EntityManager::create($connection, $config);
+$entityManager = new EntityManager($connection, $config);
 
 
 

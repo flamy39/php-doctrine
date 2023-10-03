@@ -2,6 +2,8 @@
 
 namespace App;
 
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
 #[ORM\Entity]
@@ -17,10 +19,18 @@ class Post
     #[ORM\Column(type: 'text')]
     private ?string $description;
 
+    #[ORM\OneToMany(mappedBy: 'post',targetEntity: Commentaire::class,cascade: ['persist', 'remove'])]
+    private Collection $commentaires;
+
+    public function __construct()
+    {
+        $this->commentaires = new ArrayCollection();
+    }
+
     /**
      * @return int
      */
-    public function getId()
+    public function getId() : int
     {
         return $this->id;
     }
@@ -28,7 +38,7 @@ class Post
     /**
      * @return string
      */
-    public function getTitre()
+    public function getTitre() : string
     {
         return $this->titre;
     }
@@ -36,7 +46,7 @@ class Post
     /**
      * @return string
      */
-    public function getDescription()
+    public function getDescription() : string
     {
         return $this->description;
     }
@@ -44,7 +54,7 @@ class Post
     /**
      * @param string $titre
      */
-    public function setTitre($titre)
+    public function setTitre(string $titre) : void
     {
         $this->titre = $titre;
     }
@@ -52,10 +62,15 @@ class Post
     /**
      * @param string $description
      */
-    public function setDescription($description)
+    public function setDescription(string $description) : void
     {
         $this->description = $description;
     }
 
-
+    // Ajouter un commentaire
+    public function addCommentaire(Commentaire $commentaire): void
+    {
+        $this->commentaires[] = $commentaire;
+        $commentaire->setPost($this);
+    }
 }
