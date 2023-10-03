@@ -1,0 +1,21 @@
+{
+    "name": "lamyf/php-doctrine",
+    "type": "project",
+    "autoload": {
+        "psr-4": {
+            "App\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Franck LAMY",
+            "email": "franck.lamy39@free.fr"
+        }
+    ],
+    "require": {
+        "doctrine/orm": "^2.16",
+        "doctrine/dbal": "^3.7",
+        "symfony/yaml": "^6.3",
+        "symfony/cache": "^6.3"
+    }
+}
