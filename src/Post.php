@@ -8,9 +8,14 @@ use Doctrine\ORM\Mapping as ORM;
 #[ORM\Table(name: 'post')]
 class Post
 {
-    private int $id;
-    private string $titre;
-    private string $description;
+    #[ORM\Id]
+    #[ORM\Column(type: 'integer')]
+    #[ORM\GeneratedValue]
+    private ?int $id;
+    #[ORM\Column(type: 'string', length: 255)]
+    private ?string $titre;
+    #[ORM\Column(type: 'text')]
+    private ?string $description;
 
     /**
      * @return int
