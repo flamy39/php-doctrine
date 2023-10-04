@@ -18,5 +18,9 @@
         "symfony/yaml": "^6.3",
         "symfony/cache": "^6.3",
         "vlucas/phpdotenv": "^5.5"
+    },
+    "require-dev": {
+        "doctrine/data-fixtures": "^1.6",
+        "fakerphp/faker": "^1.23"
     }
 }
