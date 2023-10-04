@@ -6,6 +6,11 @@
             "App\\": "src/"
         }
     },
+    "autoload-dev": {
+        "psr-4": {
+            "Test\\" : "tests/"
+        }
+    },
     "authors": [
         {
             "name": "Franck LAMY",
@@ -21,6 +26,7 @@
     },
     "require-dev": {
         "doctrine/data-fixtures": "^1.6",
-        "fakerphp/faker": "^1.23"
+        "fakerphp/faker": "^1.23",
+        "phpunit/phpunit": "^10.3"
     }
 }

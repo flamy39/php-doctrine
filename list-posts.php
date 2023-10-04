@@ -3,7 +3,7 @@
 require_once "bootstrap.php";
 
 // Récupération de tous les posts
-$repository = $entityManager->getRepository('App\Post');
+$repository = $entityManager->getRepository('App\Entity\Post');
 $posts = $repository->findAll();
 
 // Affichage des posts
