@@ -28,5 +28,8 @@
         "doctrine/data-fixtures": "^1.6",
         "fakerphp/faker": "^1.23",
         "phpunit/phpunit": "^10.3"
+    },
+    "scripts": {
+        "load-fixtures" : "php load-fixtures.php"
     }
 }

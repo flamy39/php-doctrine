@@ -2,7 +2,7 @@
 
 namespace App\Fixtures;
 
-use App\Post;
+use App\Entity\Post;
 use Doctrine\Persistence\ObjectManager;
 use Faker\Factory;
 
