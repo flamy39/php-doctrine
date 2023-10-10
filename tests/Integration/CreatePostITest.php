@@ -4,15 +4,14 @@ namespace Test\Integration;
 
 use App\Entity\Post;
 use App\UseCases\CreatePost;
+use PHPUnit\Framework\Attributes\Test;
 
 /**
  * @group integration
  */
 class CreatePostITest extends IntegrationTestBase
 {
-       /**
-     * @test
-     */
+     #[test]
     public function Test_Create_Post() {
         // Arrange
         $titre = "Post 1";
