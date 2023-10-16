@@ -9,10 +9,10 @@ use PHPUnit\Framework\Attributes\Test;
 /**
  * @group integration
  */
-class CreatePostITest extends IntegrationTestBase
+class CreatePostITTest extends IntegrationTestBase
 {
      #[test]
-    public function Test_Create_Post() {
+    public function createPost_ValeursCorrectes_OK() {
         // Arrange
         $titre = "Post 1";
         $description = "Description post 1";

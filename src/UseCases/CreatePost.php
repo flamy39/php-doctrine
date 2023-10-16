@@ -4,17 +4,18 @@ namespace App\UseCases;
 
 use App\Entity\Post;
 use Doctrine\ORM\EntityManager;
+use Doctrine\ORM\EntityManagerInterface;
 
 class CreatePost {
 
-    private EntityManager $entityManager;
+    private EntityManagerInterface $entityManager;
 
     // Injection de dépendance
 
     /**
-     * @param EntityManager $entityManager
+     * @param EntityManagerInterface $entityManager
      */
-    public function __construct(EntityManager $entityManager)
+    public function __construct(EntityManagerInterface $entityManager)
     {
         $this->entityManager = $entityManager;
     }

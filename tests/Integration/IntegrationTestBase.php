@@ -4,13 +4,14 @@ namespace Test\Integration;
 
 use Doctrine\DBAL\DriverManager;
 use Doctrine\ORM\EntityManager;
+use Doctrine\ORM\EntityManagerInterface;
 use Doctrine\ORM\ORMSetup;
 use Doctrine\ORM\Tools\SchemaTool;
 use PHPUnit\Framework\TestCase;
 
 abstract class IntegrationTestBase extends TestCase
 {
-    protected EntityManager $entityManager;
+    protected EntityManagerInterface $entityManager;
 
     protected function setUp() : void
     {

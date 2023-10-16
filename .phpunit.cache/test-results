@@ -1,1 +1,1 @@
-{"version":1,"defects":[],"times":{"Test\\Integration\\CreatePostITest::Test_Create_Post":0.01}}
+{"version":1,"defects":{"FindAllPostsITTest::testFindAllPosts":8},"times":{"Test\\Integration\\CreatePostITest::Test_Create_Post":0.022,"Test\\Integration\\CreatePostITest::createPost_ValeursCorrectes_OK":0.029,"Test\\Integration\\CreatePostITTest::createPost_ValeursCorrectes_OK":0.023,"FindAllPostsITTest::testFindAllPosts":0.015,"FindAllPostsITTest::findAllPosts":0.001}}
